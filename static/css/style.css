@@ -1,0 +1,136 @@
+body {
+    margin: 25px;
+    background-image: url("/static/assets/images/bkgdfinal.jpg");
+    background-size: auto;
+    color: black;
+    font-family: 'Josefin Slab', serif;
+}
+.ig {
+    font-size: 40px;
+}
+.ig:hover {
+    color: #FF55AA !important;
+}
+h1 {
+    font-size: 3vw;
+    font-family: 'Julius Sans One', sans-serif;
+}
+#iifsc {
+    max-width: 50vw;
+    max-height: 60%;
+}
+#skcarousel {
+    border: solid seashell 2px;
+}
+.footer {
+    font-size: smaller;
+    font-family: 'Roboto', sans-serif;
+}
+/* all cards for skater & coaches collections*/
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 83%;
+}
+.card-text {
+    font-family: 'Sacramento', cursive;
+    font-size: larger;
+}
+.card-list {
+    margin: 10px;
+    padding: 5px;
+    color: Navy;
+    width: 18rem;
+    border-radius:8px;
+    justify-items: center;
+}
+.card-img-top {
+    width: 180px;
+    height: 180px;
+    border-radius: 80px;
+    margin: 10px; 
+    border: seashell 3px solid
+}
+.card-body {
+    padding: 10px;
+}
+/* cards for rinks collection */
+.rink {
+    margin: 10px;
+    padding: 5px;
+    width: 80vw;
+    color: black;
+}
+.map {
+    margin: auto;
+    padding: 15px;
+    max-height: 120px;
+    max-width: 300px;
+}
+/* font awesome icons across pages */
+.del-icon {
+    float: right;
+    margin: 5px 10px 5px 5px;
+    color: slategray;
+}
+.del-icon:hover {
+    color: darkred;
+}
+.edit-icon {
+    float: right;
+    margin: 5px;
+    color: lightseagreen;
+    text-decoration: none;
+}
+/* all alert flash messages across pages */
+.alert {
+    border-radius: 50px;
+}
+.btn-danger {
+    background-color: darkred;
+    border-color: darkred;
+}
+.alert-danger {
+    background-color: darkred;
+    border-color: darkred;
+    color: whitesmoke;
+}
+.alert-success {
+    background-color: #79f2e6;
+    border-color: #79f2e6;
+    opacity: 60%;
+    color: black;
+    font-size: 110%;
+    font-weight: 500;
+}
+/* skater's profile - competition data*/
+.cdata {
+    color: darkcyan; 
+    border: 2px solid darkcyan;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.eec {
+    font-style: italic;
+    font-size: 14px;
+}
+/* request page - schedule table and info */
+.schetab {
+    font-weight: 600;
+}
+@media screen and (max-width: 1000px) { 
+    .smhide {
+        display: none;
+    }
+ }
+ @media screen and (max-width: 600px) { 
+    .xshide {
+        display: none;
+    }
+ }
+ .phil {
+    font-family: 'Sacramento', cursive;
+    font-size: 30px;
+    color: darkblue;
+ }

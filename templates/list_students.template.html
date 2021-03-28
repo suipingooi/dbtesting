@@ -1,0 +1,43 @@
+{% extends 'base.template.html' %}
+
+{%block content%}
+
+<h3>Skaters Listing</h3>
+<nav class="navbar navbar-light justify-content-start">
+    <a class="btn btn-warning my-2 mx-2" href="{{ url_for('add_newskater')}}">Add New</a>
+    <a class="btn btn-dark mx-2 my-2" href="{{ url_for('students_list')}}">Show All</a>
+    <form method="GET" class="d-flex">
+        <input class="form-control me-2" type="text" name="skate_level" placeholder="Search by skating level"
+            aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+    </form>
+
+</nav>
+<div class="cards">
+    {%for students in students | reverse %}
+    <div class="card card-list text-center m-3">
+        <div class="row">
+            <div>
+                <a href="{{url_for('del_skater', student_id=students._id)}}" class="del-icon fas fa-trash-alt"></a>
+            </div>
+            <div>
+                <a href="{{url_for('update_skater', student_id=students._id)}}" class="edit-icon fas fa-user-edit"></a>
+            </div>
+        </div>
+        <div>
+            <img class="card-img-top" src="{{students.imgurl}}"
+                alt="{{students.student_fname}} {{students.student_lname}}" />
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{students.student_fname}} {{students.student_lname}}</h5>
+            <h6 class="card-title">Age {{students.age}}</h6>
+            <h6 class="card-title">{{students.skate_level}}</h6>
+        </div>
+        <div>
+            <a href="{{ url_for('skater_profile', student_id=students._id )}}" class="btn btn-outline-info">More
+                Info</a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}

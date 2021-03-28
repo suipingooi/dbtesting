@@ -1,0 +1,40 @@
+{% extends 'base.template.html' %}
+
+{%block content%}
+
+<h3>Coaches Listing</h3>
+<nav class="navbar navbar-light justify-content-start">
+    <a class="btn btn-warning my-2 mx-2" href="{{ url_for('add_newcoach')}}">Add New</a>
+    <a class="btn btn-dark my-2 mx-2" href="{{ url_for('coaches_list')}}">Show All</a>
+    <form method="GET" class="d-flex">
+        <input class="form-control me-2" type="text" name="nroc_level" placeholder="Search by NROC" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+    </form>
+</nav>
+<div class="cards">
+    {%for coaches in coaches | reverse %}
+    <div class="card card-list text-center m-3">
+        <div class="row">
+            <div>
+                <a href="{{ url_for('del_coach', coach_id=coaches._id)}}" class="del-icon fas fa-trash-alt"></a>
+            </div>
+            <div>
+                <a href="{{ url_for('update_coach', coach_id=coaches._id)}}" class="edit-icon fas fa-user-edit"></a>
+            </div>
+        </div>
+        <div>
+            <img class="card-img-top" src="{{coaches.imgurl}}" alt="{{coaches.coach_fname}} {{coaches.coach_lname}}" />
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Coach {{coaches.coach_fname}} {{coaches.coach_lname}}</h5>
+            <h6 class="card-title">NROC{{coaches.nroc_level}}</h6>
+            <p class="card-text">"{{coaches.philosophy}}"</p>
+        </div>
+        <div>
+            <a href="{{ url_for('request_lesson', coach_id=coaches._id)}}" class="btn btn-outline-info">Request
+                Lesson</a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
